@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="refresh" content="1;url=https://wzy.l2k.tech/">
+  <title>作品集 · 登录入口</title>
+  <style>
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fff;color:#171717;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;line-height:1.7}
+    main{max-width:30rem;padding:2rem}h1{font-size:1.65rem;font-weight:600}p{color:#6b7280}a{color:#b45309;text-underline-offset:4px}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>正在打开作品集</h1>
+    <p>请在登录窗口输入用户名和密码。</p>
+    <a href="https://wzy.l2k.tech/">继续访问作品集 →</a>
+  </main>
+  <script>
+    const destination = new URL('https://wzy.l2k.tech/');
+    destination.hash = location.hash;
+    location.replace(destination.href);
+  </script>
+</body>
+</html>
