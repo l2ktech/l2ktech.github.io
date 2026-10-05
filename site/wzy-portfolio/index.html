@@ -1,27 +1,28 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="refresh" content="1;url=https://wzy.l2k.tech/">
-  <title>作品集 · 登录入口</title>
-  <style>
-    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fff;color:#171717;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;line-height:1.7}
-    main{max-width:30rem;padding:2rem}h1{font-size:1.65rem;font-weight:600}p{color:#6b7280}a{color:#b45309;text-underline-offset:4px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>作品集 · 私人访问</title>
+<style>
+:root{color-scheme:light;--paper:#f5f2eb;--ink:#24231f;--muted:#6b685f;--accent:#9b571b;--line:#d6d0c4}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;background:var(--paper);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+.gate{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,430px);align-items:center;gap:80px;max-width:1110px;margin:auto;padding:72px 48px}
+.intro{border-top:2px solid var(--ink);padding-top:22px}.eyebrow{font-size:11px;letter-spacing:.24em;margin:0 0 76px;color:var(--muted)}h1{font-family:"Songti SC",Georgia,serif;font-weight:500;font-size:clamp(42px,5.5vw,70px);letter-spacing:.05em;line-height:1.18;margin:0 0 24px}.description{font-size:15px;color:var(--muted);line-height:1.9;max-width:340px}.index{display:block;margin-top:68px;font-family:Georgia,serif;font-style:italic;font-size:14px;color:var(--muted)}
+form{padding:30px 0}label{display:block;font-size:14px;margin-bottom:13px}input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:15px 0;color:var(--ink);font-size:20px;letter-spacing:.16em;outline:none}input:focus{border-color:var(--accent);box-shadow:0 2px 0 var(--accent)}input::placeholder{letter-spacing:0;font-size:14px;color:#8c877a}button{font:inherit;cursor:pointer}button[type=submit]{margin-top:30px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);width:100%;padding:15px 18px;font-size:14px;display:flex;justify-content:space-between;align-items:center}button[type=submit]:hover{background:#39372f}button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}button:disabled{opacity:.6;cursor:wait}.status{font-size:13px;min-height:42px;line-height:1.7;margin:17px 0 0;color:var(--muted)}.status.error{color:#a03425}.hint{font-size:12px;color:var(--muted);margin-top:40px;padding-top:16px;border-top:1px solid var(--line)}
+iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:white}.lock{position:fixed;right:20px;top:16px;z-index:5;background:#fff;border:1px solid #ddd;border-radius:20px;padding:7px 14px;font-size:12px;color:#444;box-shadow:0 2px 8px #00000008}[hidden]{display:none!important}
+@media(max-width:700px){.gate{grid-template-columns:1fr;gap:28px;padding:42px 26px}.eyebrow{margin-bottom:36px}h1{font-size:43px}.index{margin-top:26px}.description{font-size:14px}form{padding:8px 0}.hint{margin-top:24px}}
+@media(prefers-reduced-motion:no-preference){.intro,form{animation:enter .45s ease-out both}form{animation-delay:.07s}@keyframes enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}}
+</style>
 </head>
 <body>
-  <main>
-    <h1>正在打开作品集</h1>
-    <p>请在登录窗口输入用户名和密码。</p>
-    <a href="https://wzy.l2k.tech/">继续访问作品集 →</a>
-  </main>
-  <script>
-    const destination = new URL('https://wzy.l2k.tech/');
-    destination.hash = location.hash;
-    location.replace(destination.href);
-  </script>
+<main class="gate" id="gate">
+<section class="intro"><p class="eyebrow">SELECTED WORK / PRIVATE ACCESS</p><h1>从想法<br>到真实项目。</h1><p class="description">项目记录、系统实现与现场演示。<br>输入访问密码，查看完整作品集。</p><span class="index">Portfolio / 01</span></section>
+<form id="unlock-form"><label for="password">访问密码</label><input id="password" type="password" placeholder="请输入密码" autocomplete="current-password" required autofocus><button type="submit"><span>查看作品集</span><span aria-hidden="true">→</span></button><p id="status" class="status" role="status" aria-live="polite"></p><p class="hint">在当前页面打开，刷新后需要重新输入密码。</p></form>
+</main>
+<button class="lock" id="lock" hidden type="button">锁定</button>
+<script src="/wzy-portfolio/unlock.50903acbc7fe3677.js"></script>
 </body>
 </html>

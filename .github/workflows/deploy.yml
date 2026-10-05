@@ -1,4 +1,4 @@
-name: Deploy protected portfolio entry
+name: Deploy encrypted portfolio
 
 on:
   push:
@@ -22,13 +22,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Verify public entry contains no portfolio assets
-        run: |
-          test "$(find site -type f | wc -l)" -eq 3
-          test -f site/.nojekyll
-          cmp site/index.html site/wzy-portfolio/index.html
-          grep -q 'location.replace(destination.href)' site/index.html
-          ! grep -E 'const PROJECTS|media/|PORTFOLIO_ACCESS_PASSWORD|<iframe|<video|<img' site/index.html
+      - name: Validate encrypted artifact policy
+        run: node check-static-public.mjs site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

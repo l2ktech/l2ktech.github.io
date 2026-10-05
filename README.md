@@ -1,9 +1,9 @@
-# 作品集登录入口
+# 受密码保护的作品集
 
-本仓库只发布跳转入口，不含作品集正文、媒体或凭据。
+访问：https://l2ktech.github.io/wzy-portfolio/
 
-分享地址：https://l2ktech.github.io/wzy-portfolio/
+直接在 GitHub Pages 内输入密码，解锁完整内容。页面、媒体和图表均由 GitHub 提供，不依赖其他网站的可达性。
 
-打开后进入 https://wzy.l2k.tech/ 输入用户名和密码。
+本仓库只保存登录程序、第三方图表库与 AES-GCM 加密产物，不保存作品集明文、访问密码或解密密钥。发布目录为 `site/`，发布前通过 `check-static-public.mjs` 校验。
 
-发布目录为 `site/`，只允许两个相同入口 HTML 和 `.nojekyll`。
+静态加密允许离线尝试密码，保护强度取决于访问密码。已经解锁或保存的内容无法撤回。完整源文件及维护流程在私有作品集仓库中维护。
